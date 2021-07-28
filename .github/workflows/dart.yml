@@ -41,3 +41,11 @@ jobs:
       - run: flutter pub get
       - run: flutter clean
       - run: flutter build appbundle
+
+  upload_apk:
+    name: Upload APK
+    steps:
+      - uses: actions/upload-artifact@master
+      - with:
+          - name: apk-build
+          - path: build/app/outputs/apk/release
